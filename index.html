@@ -1,525 +1,712 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AfroGoddess Agency</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            'playfair': ['Playfair Display', 'serif'],
-            'poppins': ['Poppins', 'sans-serif'],
-          },
-          colors: {
-            primary: '#FF2D6B',
-            secondary: '#FF8EAC',
-            dark: '#0F0F0F',
-            light: '#F5F5F5',
-            accent: '#FFD166',
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfroGoddess | Agência Exclusiva para Modelos Afro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
         }
-      }
-    }
-  </script>
-  <style>
-    .gradient-text {
-      background: linear-gradient(45deg, #FF2D6B, #FF8EAC);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero-gradient {
-      background: linear-gradient(135deg, rgba(15,15,15,0.9) 0%, rgba(255,45,107,0.2) 100%);
-    }
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-    .card-hover:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(255, 45, 107, 0.2), 0 10px 10px -5px rgba(255, 45, 107, 0.1);
-    }
-    .checkbox-custom {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 20px;
-      height: 20px;
-      border: 2px solid #FF2D6B;
-      border-radius: 4px;
-      cursor: pointer;
-      position: relative;
-      margin-right: 8px;
-    }
-    .checkbox-custom:checked {
-      background-color: #FF2D6B;
-    }
-    .checkbox-custom:checked::after {
-      content: "✓";
-      color: white;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 12px;
-    }
-  </style>
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(94, 33, 141, 0.9) 0%, rgba(233, 64, 87, 0.9) 100%);
+        }
+        
+        .model-card:hover .model-overlay {
+            opacity: 1;
+        }
+        
+        .model-overlay {
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(233, 64, 87, 0.7);
+        }
+    </style>
 </head>
-<body class="bg-dark text-light font-poppins">
- <!-- Floating WhatsApp Button funcional -->
-<a href="https://wa.me/5512996494557?text=Olá!%20Tenho%20interesse%20em%20ser%20agenciada%20pela%20AfroGoddess.%20😊"
-   target="_blank"
-   class="fixed bottom-8 right-8 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg z-50 hover:bg-green-600 transition-all"
-   title="Fale conosco pelo WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-
-  <!-- Header with Hero Section -->
-  <header class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://i.ibb.co/k2jmZnvh/pexels-hannah-barata-776560167-29026195.jpg')] bg-cover bg-center opacity-30"></div>
-    <div class="hero-gradient relative">
-      <div class="container mx-auto px-6 py-24 md:py-32 lg:py-40 text-center">
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold mb-4">
-          <span class="gradient-text">AfroGoddess</span> Agency
-        </h1>
-        <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-          Potencializando modelos iniciantes para o <span class="font-semibold text-accent">sucesso no OnlyFans</span>
-        </p>
-        <div class="flex justify-center space-x-4">
-          <a href="#formulario" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-full font-medium transition-all shadow-lg transform hover:scale-105">
-            Seja Modelo
-          </a>
-          <a href="#oferecemos" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-medium transition-all">
-            Nossos Serviços
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Navigation -->
-  <nav class="sticky top-0 z-40 bg-dark/90 backdrop-blur-md border-b border-gray-800 shadow-sm">
-    <div class="container mx-auto px-6 py-4">
-      <div class="flex justify-between items-center">
-        <a href="#" class="text-2xl font-playfair font-bold gradient-text">AfroGoddess</a>
-        <div class="hidden md:flex space-x-8">
-          <a href="#sobre" class="hover:text-primary transition-colors">Sobre</a>
-          <a href="#oferecemos" class="hover:text-primary transition-colors">Serviços</a>
-          <a href="#formulario" class="hover:text-primary transition-colors">Seja Modelo</a>
-          <a href="#" class="text-accent hover:text-primary transition-colors">FAQ</a>
-        </div>
-        <button class="md:hidden text-2xl">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- About Section -->
-  <section id="sobre" class="py-20">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col lg:flex-row items-center">
-        <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
-          <div class="relative">
-            <div class="absolute -inset-4 bg-primary/20 rounded-2xl blur-lg opacity-75"></div>
-            <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1974&auto=format&fit=crop" alt="Model" class="relative rounded-2xl shadow-xl w-full">
-          </div>
-        </div>
-        <div class="lg:w-1/2">
-          <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-6">
-            <span class="gradient-text">Sobre Nós</span>
-          </h2>
-          <p class="text-lg mb-6 leading-relaxed">
-            A <span class="text-primary font-medium">AfroGoddess Agency</span> é a agência líder em transformar modelos iniciantes em estrelas do OnlyFans. Nossa abordagem profissional e discreta garante que você alcance seu potencial máximo enquanto mantém total controle sobre sua imagem e conteúdo.
-          </p>
-          <div class="space-y-4">
-            <div class="flex items-start">
-              <div class="bg-primary/20 p-2 rounded-full mr-4">
-                <i class="fas fa-check text-primary"></i>
-              </div>
-              <p class="flex-1">Mais de <span class="text-accent font-medium">200 modelos</span> transformadas em sucessos</p>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-90 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold title-font text-purple-400">Afro<span class="text-pink-500">Goddess</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-white hover:text-pink-400 px-3 py-2 font-medium">Início</a>
+                        <a href="#about" class="text-white hover:text-pink-400 px-3 py-2 font-medium">Sobre</a>
+                        <a href="#models" class="text-white hover:text-pink-400 px-3 py-2 font-medium">Modelos</a>
+                        <a href="#services" class="text-white hover:text-pink-400 px-3 py-2 font-medium">Serviços</a>
+                        <a href="#contact" class="text-white hover:text-pink-400 px-3 py-2 font-medium">Contato</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="flex items-start">
-              <div class="bg-primary/20 p-2 rounded-full mr-4">
-                <i class="fas fa-check text-primary"></i>
-              </div>
-              <p class="flex-1"><span class="text-accent font-medium">Privacidade garantida</span> com contratos de confidencialidade</p>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-95 pb-5">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#home" class="text-white hover:text-pink-400 block px-3 py-2 font-medium">Início</a>
+                <a href="#about" class="text-white hover:text-pink-400 block px-3 py-2 font-medium">Sobre</a>
+                <a href="#models" class="text-white hover:text-pink-400 block px-3 py-2 font-medium">Modelos</a>
+                <a href="#services" class="text-white hover:text-pink-400 block px-3 py-2 font-medium">Serviços</a>
+                <a href="#contact" class="text-white hover:text-pink-400 block px-3 py-2 font-medium">Contato</a>
             </div>
-            <div class="flex items-start">
-              <div class="bg-primary/20 p-2 rounded-full mr-4">
-                <i class="fas fa-check text-primary"></i>
-              </div>
-              <p class="flex-1">Equipe especializada em <span class="text-accent font-medium">marketing digital</span> para conteúdo adulto</p>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold title-font mb-6 leading-tight">
+                        Onde o Poder Africano se Transforma em <span class="text-yellow-300">Lucro Real</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 text-gray-100">
+                        A primeira agência exclusiva para modelos Afro em plataformas premium como OnlyFans e Privacy. Transformamos sua beleza em liberdade financeira.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 btn-glow flex items-center justify-center">
+                            <span>Quero ser uma AfroGoddess</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#services" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-black transition duration-300 flex items-center justify-center">
+                            <span>Conheça nossos serviços</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="floating">
+                        <img src="https://images.unsplash.com/photo-1589156280159-27698a70f0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Modelo AfroGoddess" 
+                             class="rounded-lg shadow-2xl border-4 border-purple-400 transform rotate-2">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-purple-600 rounded-lg p-4 shadow-lg hidden md:block">
+                        <p class="text-white font-bold text-lg">+US$5.000/mês</p>
+                        <p class="text-white text-sm">Ganhos potenciais</p>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-pink-500 rounded-lg p-4 shadow-lg hidden md:block">
+                        <p class="text-white font-bold text-lg">100%</p>
+                        <p class="text-white text-sm">Privacidade</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services Section -->
-  <section id="oferecemos" class="py-20 bg-gradient-to-b from-dark to-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-4">
-          <span class="gradient-text">O Que Oferecemos</span>
-        </h2>
-        <p class="max-w-2xl mx-auto text-lg text-gray-300">
-          Nossos serviços exclusivos são projetados para maximizar seus ganhos enquanto minimizam seu trabalho
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 card-hover">
-          <div class="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i class="fas fa-user-plus text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Perfil Otimizado</h3>
-          <p class="text-gray-300">
-            Criamos e otimizamos seu perfil no OnlyFans com bio atraente, fotos profissionais e estratégia de preços.
-          </p>
-        </div>
-        
-        <!-- Service 2 -->
-        <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 card-hover">
-          <div class="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i class="fas fa-chart-line text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Gestão de Conteúdo</h3>
-          <p class="text-gray-300">
-            Planejamento de postagens, edição profissional de fotos/vídeos e calendário de conteúdo estratégico.
-          </p>
-        </div>
-        
-        <!-- Service 3 -->
-        <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 card-hover">
-          <div class="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i class="fas fa-shield-alt text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Proteção de Identidade</h3>
-          <p class="text-gray-300">
-            Soluções completas para anonimato, incluindo remoção de metadados e proteção contra vazamentos.
-          </p>
-        </div>
-        
-        <!-- Service 4 -->
-        <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 card-hover">
-          <div class="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i class="fas fa-bullhorn text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Marketing Digital</h3>
-          <p class="text-gray-300">
-            Promoção em redes sociais, estratégias de engajamento e técnicas comprovadas para atrair assinantes.
-          </p>
-        </div>
-        
-        <!-- Service 5 -->
-        <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 card-hover">
-          <div class="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i class="fas fa-headset text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Suporte 24/7</h3>
-          <p class="text-gray-300">
-            Acesso direto à nossa equipe via WhatsApp e Telegram para dúvidas e suporte imediato.
-          </p>
-        </div>
-        
-        <!-- Service 6 -->
-        <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700 card-hover">
-          <div class="bg-primary/10 text-primary w-14 h-14 rounded-xl flex items-center justify-center mb-6">
-            <i class="fas fa-money-bill-wave text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Consultoria Financeira</h3>
-          <p class="text-gray-300">
-            Orientação sobre gestão de rendimentos, investimentos e planejamento tributário para modelos.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-<section class="py-20 bg-primary/10">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-4">
-        <span class="gradient-text">Nossas Modelos</span>
-      </h2>
-      <p class="max-w-2xl mx-auto text-lg">
-        Veja o que nossas modelos estão dizendo sobre a AfroGoddess Agency
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Testimonial 1 -->
-      <div class="bg-gray-800 rounded-xl p-8">
-        <div class="flex items-center mb-6">
-          <img src="https://i.ibb.co/yBnLvMtz/pexels-hillary-disantos-1557063-4267672.jpg" alt="Model Camila" class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-primary">
-          <div>
-            <h4 class="font-semibold">Camila S.</h4>
-            <p class="text-sm text-gray-400">@camilinha</p>
-          </div>
-        </div>
-        <p class="italic mb-4">
-          "Em 3 meses com a AfroGoddess, meu faturamento aumentou 800%. A equipe é incrível e me ensinou tudo sobre como ter sucesso no OnlyFans."
-        </p>
-        <div class="flex text-yellow-400">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-      </div>
-
-      <!-- Testimonial 2 -->
-      <div class="bg-gray-800 rounded-xl p-8">
-        <div class="flex items-center mb-6">
-          <img src="https://i.ibb.co/99LXSqP9/pexels-samson-katt-5255233.jpg" alt="Model Fernanda" class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-primary">
-          <div>
-            <h4 class="font-semibold">Fernanda R.</h4>
-            <p class="text-sm text-gray-400">@ferhot</p>
-          </div>
-        </div>
-        <p class="italic mb-4">
-          "Precisei de total anonimato e a AfroGoddess me garantiu isso. Me sinto segura e meu conteúdo está rendendo muito mais do que esperava."
-        </p>
-        <div class="flex text-yellow-400">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-      </div>
-
-      <!-- Testimonial 3 -->
-      <div class="bg-gray-800 rounded-xl p-8">
-        <div class="flex items-center mb-6">
-          <img src="https://i.ibb.co/Fjsbtv0/pexels-mart-production-8433506.jpg" alt="Model Juliana" class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-primary">
-          <div>
-            <h4 class="font-semibold">Juliana M.</h4>
-            <p class="text-sm text-gray-400">@juhmodel</p>
-          </div>
-        </div>
-        <p class="italic mb-4">
-          "Comecei do zero e em 2 meses já estava no top 5% da plataforma. A estratégia de conteúdo e marketing deles é simplesmente perfeita."
-        </p>
-        <div class="flex text-yellow-400">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Form Section -->
-  <section id="formulario" class="py-20">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <div class="bg-gray-800/50 rounded-2xl p-8 md:p-12 border border-gray-700 shadow-xl">
-        <div class="text-center mb-10">
-          <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-4">
-            <span class="gradient-text">Seja Uma Modelo</span>
-          </h2>
-          <p class="text-lg">
-            Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas
-          </p>
-        </div>
-        
-        <form class="formulario" action="https://formspree.io/f/mjkrerdr" method="POST" class="space-y-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label for="nome" class="block mb-2 font-medium">Seu Nome</label>
-              <input type="text" id="nome" name="nome" required 
-                     class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+    <!-- Stats Section -->
+    <section class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <p class="text-3xl md:text-5xl font-bold text-pink-500 mb-2">+500</p>
+                    <p class="text-gray-300">Modelos Afro</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-3xl md:text-5xl font-bold text-purple-500 mb-2">US$2K</p>
+                    <p class="text-gray-300">Média em 60 dias</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-3xl md:text-5xl font-bold text-yellow-400 mb-2">18+</p>
+                    <p class="text-gray-300">Países atendidos</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-3xl md:text-5xl font-bold text-white mb-2">24/7</p>
+                    <p class="text-gray-300">Suporte</p>
+                </div>
             </div>
-            <div>
-              <label for="email" class="block mb-2 font-medium">Seu E-mail</label>
-              <input type="email" id="email" name="email" required 
-                     class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
-            </div>
-          </div>
-          
-          <div>
-            <label for="instagram" class="block mb-2 font-medium">Instagram ou Telegram</label>
-            <input type="text" id="instagram" name="instagram" required 
-                   class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
-          </div>
-          
-          <div>
-            <label for="experiencia" class="block mb-2 font-medium">Fale sobre sua experiência (se houver)</label>
-            <textarea id="experiencia" name="experiencia" rows="4"
-                      class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"></textarea>
-          </div>
-          
-          <div class="flex items-center">
-            <input type="checkbox" id="anonimato" name="anonimato" value="Sim" class="checkbox-custom">
-            <label for="anonimato" class="cursor-pointer">Desejo manter anonimato</label>
-          </div>
-          
-          <button type="submit" 
-                  class="w-full bg-gradient-to-r from-primary to-secondary text-white px-6 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition-all shadow-lg transform hover:scale-[1.01]">
-            Enviar Inscrição
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <!-- FAQ Section -->
-  <section class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-4">
-          <span class="gradient-text">Perguntas Frequentes</span>
-        </h2>
-      </div>
-      
-      <div class="space-y-4">
-        <!-- FAQ 1 -->
-        <div class="bg-gray-800 rounded-xl overflow-hidden">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-medium text-lg">Como funciona o processo de seleção?</span>
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content px-6 pb-6 hidden">
-            <p class="text-gray-300">
-              Avaliamos seu perfil e potencial com base em diversos fatores. Não exigimos experiência prévia, mas valorizamos comprometimento e profissionalismo. Após análise do formulário, marcamos uma entrevista para alinhar expectativas.
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold title-font mb-4">
+                    <span class="text-purple-400">Você é linda.</span> <span class="text-pink-500">Você é única.</span> 
+                    <span class="text-yellow-400">E seu conteúdo vale muito.</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto my-6"></div>
+            </div>
+            
+            <div class="md:flex items-center space-y-12 md:space-y-0 md:space-x-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1589156280159-27698a70f0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Sobre AfroGoddess" 
+                         class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6">Por que entrar para a AfroGoddess?</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-purple-500 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-lock text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Privacidade e Discrição Total</h4>
+                                <p class="text-gray-300">
+                                    Você decide o que mostrar e para quem mostrar. Nossa equipe garante que sua imagem seja tratada com respeito, com estratégias para proteger sua identidade caso deseje atuar de forma anônima.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-pink-500 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-chart-line text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Crescimento Rápido e Direcionado</h4>
+                                <p class="text-gray-300">
+                                    Trabalhamos com estratégias de marketing digital, edição profissional de conteúdo, engajamento de seguidores e campanhas personalizadas. Você foca em criar, nós cuidamos do resto.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-money-bill-wave text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Ganhos Reais, Rápidos e Escaláveis</h4>
+                                <p class="text-gray-300">
+                                    Modelos iniciantes ganham, em média, US$ 500 a US$ 2.000 por mês nos primeiros 60 dias, e esse número pode facilmente passar de US$ 5.000 mensais com consistência e estratégia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Showcase -->
+    <section id="models" class="py-16 md:py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold title-font mb-4">
+                    <span class="text-purple-400">Nossas</span> <span class="text-pink-500">Afro</span><span class="text-yellow-400">Goddesses</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Valorização da Beleza Afro - A AfroGoddess nasceu para empoderar e representar mulheres afrodescendentes. Aqui, você não é mais uma — você é uma Deusa.
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto my-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Model 1 -->
+                <div class="model-card relative rounded-lg overflow-hidden h-96">
+                    <img src="https://images.unsplash.com/photo-1589156280159-27698a70f0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Modelo 1" 
+                         class="w-full h-full object-cover">
+                    <div class="model-overlay absolute inset-0 flex flex-col justify-end p-6 opacity-0">
+                        <h3 class="text-2xl font-bold text-white">Amina</h3>
+                        <p class="text-pink-400 font-medium">US$ 4,200/mês</p>
+                        <p class="text-gray-300 mt-2">Angola | OnlyFans Top 5%</p>
+                    </div>
+                </div>
+                
+                <!-- Model 2 -->
+                <div class="model-card relative rounded-lg overflow-hidden h-96">
+                    <img src="https://images.unsplash.com/photo-1589156280159-27698a70f0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Modelo 2" 
+                         class="w-full h-full object-cover">
+                    <div class="model-overlay absolute inset-0 flex flex-col justify-end p-6 opacity-0">
+                        <h3 class="text-2xl font-bold text-white">Jéssica</h3>
+                        <p class="text-pink-400 font-medium">US$ 6,800/mês</p>
+                        <p class="text-gray-300 mt-2">Brasil | Privacy.com</p>
+                    </div>
+                </div>
+                
+                <!-- Model 3 -->
+                <div class="model-card relative rounded-lg overflow-hidden h-96">
+                    <img src="https://images.unsplash.com/photo-1589156280159-27698a70f0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Modelo 3" 
+                         class="w-full h-full object-cover">
+                    <div class="model-overlay absolute inset-0 flex flex-col justify-end p-6 opacity-0">
+                        <h3 class="text-2xl font-bold text-white">Fatou</h3>
+                        <p class="text-pink-400 font-medium">US$ 3,500/mês</p>
+                        <p class="text-gray-300 mt-2">Senegal | OnlyFans Top 8%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#contact" class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 transition duration-300 btn-glow">
+                    Quero fazer parte!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold title-font mb-4">
+                    <span class="text-purple-400">O que a</span> <span class="text-pink-500">AfroGoddess</span> <span class="text-yellow-400">oferece</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto my-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-900 rounded-lg p-8 hover:transform hover:-translate-y-2 transition duration-300">
+                    <div class="bg-purple-600 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-user-plus text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Criação de Perfil Completo</h3>
+                    <p class="text-gray-300">
+                        Criação profissional de perfis em OnlyFans, Privacy e redes sociais com branding personalizado para destacar sua identidade única.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-900 rounded-lg p-8 hover:transform hover:-translate-y-2 transition duration-300">
+                    <div class="bg-pink-500 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Agendamento de Conteúdo</h3>
+                    <p class="text-gray-300">
+                        Organização estratégica de conteúdo para manter sua presença consistente e engajamento alto sem estresse.
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-900 rounded-lg p-8 hover:transform hover:-translate-y-2 transition duration-300">
+                    <div class="bg-yellow-500 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Suporte ao Cliente</h3>
+                    <p class="text-gray-300">
+                        Atendimento profissional às mensagens dos fãs para aumentar conversões enquanto você foca na criação.
+                    </p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-gray-900 rounded-lg p-8 hover:transform hover:-translate-y-2 transition duration-300">
+                    <div class="bg-purple-500 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-photo-video text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Edição Profissional</h3>
+                    <p class="text-gray-300">
+                        Edição de vídeos e fotos com qualidade premium para destacar sua beleza e manter padrão alto de conteúdo.
+                    </p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-gray-900 rounded-lg p-8 hover:transform hover:-translate-y-2 transition duration-300">
+                    <div class="bg-pink-600 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bullhorn text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Marketing Digital</h3>
+                    <p class="text-gray-300">
+                        Estratégias de crescimento rápido em redes sociais para atrair mais assinantes e aumentar seus ganhos.
+                    </p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-gray-900 rounded-lg p-8 hover:transform hover:-translate-y-2 transition duration-300">
+                    <div class="bg-yellow-400 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-gavel text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Suporte Jurídico</h3>
+                    <p class="text-gray-300">
+                        Assistência legal e financeira, incluindo recebimentos internacionais e proteção de direitos autorais.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 md:py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold title-font mb-4">
+                    <span class="text-purple-400">Depoimentos</span> <span class="text-pink-500">Reais</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto my-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-black bg-opacity-50 rounded-lg p-8 border-l-4 border-pink-500">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1589156280159-27698a70f0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Cliente 1" 
+                             class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Luana</h4>
+                            <p class="text-pink-400 text-sm">Angola</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Em 3 meses com a AfroGoddess já estou ganhando mais do que no meu emprego formal. A equipe cuida de tudo e eu só preciso ser eu mesma. Melhor decisão da minha vida!"
+                    </p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-black bg-opacity-50 rounded-lg p-8 border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1589156280159-27698a70f0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Cliente 2" 
+                             class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Cláudia</h4>
+                            <p class="text-purple-400 text-sm">Brasil</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Tinha medo de exposição, mas a AfroGoddess me mostrou como trabalhar com segurança. Hoje tenho uma renda estável e liberdade para viajar quando quiser!"
+                    </p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-black bg-opacity-50 rounded-lg p-8 border-l-4 border-yellow-500">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1589156280159-27698a70f0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Cliente 3" 
+                             class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Aminata</h4>
+                            <p class="text-yellow-400 text-sm">Senegal</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Nunca imaginei que minha beleza poderia me dar liberdade financeira. A AfroGoddess me ensinou tudo e hoje sou uma empresária de sucesso!"
+                    </p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold title-font mb-6">
+                Transforme sua beleza em <span class="text-yellow-300">liberdade financeira</span>
+            </h2>
+            <p class="text-xl text-white mb-8 max-w-3xl mx-auto">
+                Vagas limitadas para modelos selecionadas. Entre em contato hoje e torne-se uma AfroGoddess!
             </p>
-          </div>
-        </div>
-        
-        <!-- FAQ 2 -->
-        <div class="bg-gray-800 rounded-xl overflow-hidden">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-medium text-lg">Quais são os custos envolvidos?</span>
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content px-6 pb-6 hidden">
-            <p class="text-gray-300">
-              Trabalhamos com um modelo de comissão sobre seus ganhos, sem custos iniciais. Nossa taxa varia de 40% a 50% dependendo do pacote de serviços escolhido, sempre transparente no contrato.
-            </p>
-          </div>
-        </div>
-        
-        <!-- FAQ 3 -->
-        <div class="bg-gray-800 rounded-xl overflow-hidden">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-medium text-lg">Como garantem meu anonimato?</span>
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content px-6 pb-6 hidden">
-            <p class="text-gray-300">
-              Utilizamos técnicas avançadas como remoção de metadados, edição de características identificáveis, contas fantasmas para promoção e contratos de confidencialidade com toda a equipe.
-            </p>
-          </div>
-        </div>
-        
-        <!-- FAQ 4 -->
-        <div class="bg-gray-800 rounded-xl overflow-hidden">
-          <button class="faq-toggle w-full flex justify-between items-center p-6 text-left">
-            <span class="font-medium text-lg">Quanto tempo até começar a ganhar?</span>
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content px-6 pb-6 hidden">
-            <p class="text-gray-300">
-              Nossas modelos geralmente começam a gerar renda nas primeiras 2-4 semanas. O crescimento é progressivo, com média de R$3.000-5.000/mês no primeiro trimestre para iniciantes que seguem nossas estratégias.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-12 bg-gray-900 border-t border-gray-800">
-    <div class="container mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div>
-          <h3 class="text-xl font-playfair font-bold gradient-text mb-4">AfroGoddess</h3>
-          <p class="text-gray-400">
-            A agência líder em desenvolvimento de modelos para OnlyFans no Brasil.
-          </p>
-        </div>
-        
-        <div>
-          <h4 class="font-semibold mb-4">Links Rápidos</h4>
-          <ul class="space-y-2">
-            <li><a href="#sobre" class="text-gray-400 hover:text-primary transition-colors">Sobre Nós</a></li>
-            <li><a href="#oferecemos" class="text-gray-400 hover:text-primary transition-colors">Serviços</a></li>
-            <li><a href="#formulario" class="text-gray-400 hover:text-primary transition-colors">Seja Modelo</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">FAQ</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 class="font-semibold mb-4">Contato</h4>
-          <ul class="space-y-2 text-gray-400">
-            <li class="flex items-center">
-              <i class="fas fa-envelope mr-2 text-primary"></i>
-              rpctrade@proton.me
-            </li>
-            <li class="flex items-center">
-              <i class="fab fa-whatsapp mr-2 text-primary"></i>
-              (12) 99649-4557
-            </li>
-            <li class="flex items-center">
-              <i class="fab fa-telegram mr-2 text-primary"></i>
-              @AfroGoddessAgency
-            </li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 class="font-semibold mb-4">Redes Sociais</h4>
-          <div class="flex space-x-4">
-            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-              <i class="fab fa-instagram"></i>
+            <a href="#contact" class="inline-block bg-white text-black font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition duration-300 btn-glow">
+                Quero me inscrever agora!
             </a>
-            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
-              <i class="fab fa-telegram"></i>
-            </a>
-          </div>
         </div>
-      </div>
-      
-      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-        <p>&copy; 2025 AfroGoddess Agency. Todos os direitos reservados.</p>
-        <p class="mt-2 text-sm">Este site é apenas para maiores de 18 anos.</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Scripts -->
-  <script>
-    // FAQ Toggle
-    document.querySelectorAll('.faq-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        const icon = button.querySelector('i');
-        
-        content.classList.toggle('hidden');
-        icon.classList.toggle('fa-chevron-down');
-        icon.classList.toggle('fa-chevron-up');
-      });
-    });
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h2 class="text-3xl md:text-5xl font-bold title-font mb-6">
+                        <span class="text-purple-400">Entre em</span> <span class="text-pink-500">contato</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 mb-8">
+                        Preencha o formulário ou nos contate diretamente pelas redes sociais.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-pink-500 p-3 rounded-full mr-4">
+                                <i class="fas fa-globe-africa text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Site</p>
+                                <p class="text-white font-medium">www.afrogoddess.agency</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-purple-500 p-3 rounded-full mr-4">
+                                <i class="fab fa-instagram text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Instagram</p>
+                                <p class="text-white font-medium">@afrogoddess.agency</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-green-500 p-3 rounded-full mr-4">
+                                <i class="fab fa-whatsapp text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">WhatsApp</p>
+                                <p class="text-white font-medium">+244 123 456 789</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Atendemos em toda África e Diáspora</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm">Angola</span>
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm">Moçambique</span>
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm">Cabo Verde</span>
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm">Guiné-Bissau</span>
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm">Brasil</span>
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm">Portugal</span>
+                            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm">Europa</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-gray-900 rounded-lg p-8 shadow-xl">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-300 mb-2">Seu nome</label>
+                            <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-300 mb-2">Seu e-mail</label>
+                            <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="country" class="block text-gray-300 mb-2">País</label>
+                            <select id="country" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <option>Selecione seu país</option>
+                                <option>Angola</option>
+                                <option>Moçambique</option>
+                                <option>Cabo Verde</option>
+                                <option>Guiné-Bissau</option>
+                                <option>Brasil</option>
+                                <option>Portugal</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition duration-300 btn-glow">
+                            Enviar mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    // Smooth scrolling for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold title-font mb-4">
+                    <span class="text-purple-400">Perguntas</span> <span class="text-pink-500">Frequentes</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto my-6"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6 border-b border-gray-700 pb-6">
+                    <button class="faq-toggle flex items-center justify-between w-full text-left focus:outline-none">
+                        <h3 class="text-xl font-semibold">Quem pode participar da AfroGoddess?</h3>
+                        <i class="fas fa-chevron-down text-pink-500 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-gray-300">
+                            Mulheres entre 18 e 40 anos, com atitude, responsabilidade e vontade de crescer. Não precisa de experiência prévia — nós te treinamos do zero! Valorizamos a diversidade da beleza afro em todas as suas formas.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="mb-6 border-b border-gray-700 pb-6">
+                    <button class="faq-toggle flex items-center justify-between w-full text-left focus:outline-none">
+                        <h3 class="text-xl font-semibold">Como funciona o processo de seleção?</h3>
+                        <i class="fas fa-chevron-down text-pink-500 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-gray-300">
+                            Após preencher o formulário de contato, nossa equipe entrará em contato para uma entrevista online. Avaliamos seu potencial, comprometimento e alinhamento com nossos valores. O processo é simples e discreto.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="mb-6 border-b border-gray-700 pb-6">
+                    <button class="faq-toggle flex items-center justify-between w-full text-left focus:outline-none">
+                        <h3 class="text-xl font-semibold">Posso manter meu anonimato?</h3>
+                        <i class="fas fa-chevron-down text-pink-500 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-gray-300">
+                            Sim! Temos estratégias específicas para proteger sua identidade, incluindo uso de pseudônimos, edição de características identificáveis e controle rigoroso de compartilhamento de conteúdo.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="mb-6 border-b border-gray-700 pb-6">
+                    <button class="faq-toggle flex items-center justify-between w-full text-left focus:outline-none">
+                        <h3 class="text-xl font-semibold">Como são os pagamentos?</h3>
+                        <i class="fas fa-chevron-down text-pink-500 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-gray-300">
+                            Os ganhos são depositados diretamente em sua conta bancária ou via métodos digitais seguros. Oferecemos suporte para recebimentos internacionais e orientação fiscal conforme as leis do seu país.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="mb-6">
+                    <button class="faq-toggle flex items-center justify-between w-full text-left focus:outline-none">
+                        <h3 class="text-xl font-semibold">Quanto tempo até começar a ganhar dinheiro?</h3>
+                        <i class="fas fa-chevron-down text-pink-500 ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-gray-300">
+                            Modelos iniciantes geralmente começam a ter rendimentos dentro de 2-4 semanas. Com nossa estratégia, a média é US$ 500-2.000 nos primeiros 60 dias, podendo crescer rapidamente com consistência.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:order-2 space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-pink-500">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-green-500">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <div class="text-center md:text-left">
+                        <span class="text-2xl font-bold title-font text-purple-400">Afro<span class="text-pink-500">Goddess</span></span>
+                        <p class="mt-2 text-gray-400">
+                            Transformando beleza afro em liberdade financeira desde 2020.
+                        </p>
+                        <p class="mt-4 text-gray-500 text-sm">
+                            &copy; 2023 AfroGoddess Agency. Todos os direitos reservados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         });
-      });
-    });
 
-    // Mobile menu toggle (placeholder - would need more implementation)
-    document.querySelector('button.md\\:hidden').addEventListener('click', () => {
-      alert('Mobile menu would open here in a full implementation');
-    });
-  </script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
 </body>
 </html>
