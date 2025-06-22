@@ -104,35 +104,13 @@
                             <span>Conheça nossos serviços</span>
                         </a>
                     </div>
-               <div class="relative w-full max-w-md mx-auto mt-10 rounded-lg overflow-hidden shadow-xl border-4 border-purple-400">
-  <img id="slideshow-image"
-       src="https://i.ibb.co/7NJryMLV/pexels-godisable-jacob-226636-908310.jpg"
-       alt="Modelo AfroGoddess"
-       class="w-full h-auto transition-opacity duration-700 ease-in-out rounded-lg rotate-2">
+              <div class="md:w-1/2 relative">
+  <div class="floating">
+    <img src="https://i.ibb.co/7NJryMLV/pexels-godisable-jacob-226636-908310.jpg" 
+         alt="Modelo AfroGoddess" 
+         class="w-64 rounded-lg shadow-2xl border-4 border-purple-400 transform rotate-2">
+  </div>
 </div>
-
-<script>
-  const images = [
-    "https://i.ibb.co/7NJryMLV/pexels-godisable-jacob-226636-908310.jpg",
-    "https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=1000", 
-    "https://images.unsplash.com/photo-1605733160314-4f04cd59b4c5?q=80&w=1000",
-    "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000"
-  ];
-
-  let index = 0;
-  const img = document.getElementById("slideshow-image");
-
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    img.classList.add("opacity-0");
-
-    setTimeout(() => {
-      img.src = images[index];
-      img.classList.remove("opacity-0");
-    }, 500);
-  }, 4000); // Troca a cada 4 segundos
-</script>
-
                     <div class="absolute -bottom-6 -left-6 bg-purple-600 rounded-lg p-4 shadow-lg hidden md:block">
                         <p class="text-white font-bold text-lg">+US$5.000/mês</p>
                         <p class="text-white text-sm">Ganhos potenciais</p>
